@@ -1,0 +1,21 @@
+--- net/minecraft/src/EntitySquid.java
++++ net/minecraft/src/EntitySquid.java
+@@ -69,6 +69,7 @@
+ 	}
+ 
+ 	public void onLivingUpdate() {
++	    this.kill(); // Goodbye.
+ 		super.onLivingUpdate();
+ 		this.field_21088_b = this.field_21089_a;
+ 		this.field_21086_f = this.field_21087_c;
+--- net/minecraft/src/BiomeGenBase.java
++++ net/minecraft/src/BiomeGenBase.java
+@@ -41,7 +41,7 @@
+ 		this.spawnableCreatureList.add(new SpawnListEntry(EntityPig.class, 10));
+ 		this.spawnableCreatureList.add(new SpawnListEntry(EntityChicken.class, 10));
+ 		this.spawnableCreatureList.add(new SpawnListEntry(EntityCow.class, 8));
+-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 10));
++		//this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 10));
+ 	}
+ 
+ 	private BiomeGenBase setDisableRain() {
